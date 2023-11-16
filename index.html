@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <title>3D Surface Area Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>3D Surface Area Quiz</h1>
+    <div class="quiz-container">
+      <p id="question"></p>
+      <ul>
+        <li id="1"></li>
+        <br>
+        <li id="2"></li>
+        <br>
+        <li id="3"></li>
+        <br>
+        <li id="4"></li>
+      </ul>
+
+      <img src="./img/trans.png" id="img" class="shape">
+
+      <form id="surface-area-form">
+        <label for="user-answer">Your Answer:</label>
+        <br>
+        <input autocomplete="off" type="text" id="user-answer" placeholder="0" />
+        <div class="buttons">
+          <div class="btn"><button type="button" onclick="checkAnswer()">Check Answer</button></div>
+          <div class="btn"><button type="button" onclick="nextQuestion()">Next Question</button></div>
+        </div>
+      </form>
+      <p id="answer"></p>
+      <img style="width: 100%; height: 340px;"src="./img/trans.png">
+    </div>
+    <script>
+      generateQuestion();
+    </script>
+  </body>
+</html>
