@@ -21,6 +21,8 @@
         <li id="3"></li>
         <br>
         <li id="4"></li>
+        <br>
+        <li id="5"></li>
       </ul>
 
       <img src="./img/trans.png" id="img" class="shape">
@@ -35,7 +37,22 @@
         </div>
       </form>
       <p id="answer"></p>
+
+      <div class="Score buttons">
+        <div class="Score_Value btn">
+          <img class="icons" src="./img/Correct.png" alt="Correct">
+          <h3>Correct Questions</h3>
+          <span id="score_correct">0</span>
+        </div>
+        <div class="Score_Value btn">
+          <img class="icons" src="./img/Wrong.png" alt="Correct">
+          <h3>Wrong Questions</h3>
+          <span id="score_wrong">0</span>
+        </div>
+      </div>
+
       <img style="width: 100%; height: 340px;"src="./img/trans.png">
+
     </div>
     <script>
       generateQuestion();
