@@ -11,8 +11,8 @@
   </head>
   <body>
     <h1>3D Surface Area Quiz</h1>
+    <p>Find The Surface Area Of This 3D Shape</p>
     <div class="quiz-container">
-      <p id="question"></p>
       <ul>
         <li id="1"></li>
         <br>
@@ -30,7 +30,7 @@
       <form id="surface-area-form">
         <label for="user-answer">Your Answer:</label>
         <br>
-        <input autocomplete="off" type="text" id="user-answer" placeholder="0" />
+        <input autocomplete="off" type="text" id="user-answer" onkeypress="handleKeyPress(event)" placeholder="0" />
         <div class="buttons">
           <div class="btn"><button type="button" onclick="checkAnswer()">Check Answer</button></div>
           <div class="btn"><button type="button" onclick="nextQuestion()">Next Question</button></div>

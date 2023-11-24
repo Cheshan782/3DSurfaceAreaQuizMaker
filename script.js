@@ -39,7 +39,6 @@ function generateQuestion() {
   ];
   const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
 
-  let question, correctAnswer;
 
   var imgChanger = document.getElementById("img");
 
@@ -62,7 +61,6 @@ function generateQuestion() {
 
     imgChanger.src = "img/Rectangular.png";
     correctAnswer = calculateRectangularPrismSurfaceArea(length, width, height);
-    question = "What is the surface area of this Rectangular Prism?";
 
     //-------------------------------------------------------------------------------------------------Triangular Prism
   } else if (randomShape === "Triangular Prism") {
@@ -87,15 +85,7 @@ function generateQuestion() {
     document.getElementById("5").textContent = s3word;
 
     imgChanger.src = "img/Triangular.png";
-    correctAnswer = calculateTriangularPrismSurfaceArea(
-      base,
-      height,
-      length,
-      s1,
-      s2,
-      s3
-    );
-    question = "What is the surface area of this Triangular Prism?";
+    correctAnswer = calculateTriangularPrismSurfaceArea(base,height,length,s1,s2,s3);
 
     //-------------------------------------------------------------------------------------------------Hexagonal Prism
   } else if (randomShape === "Hexagonal Prism") {
@@ -113,7 +103,6 @@ function generateQuestion() {
 
     imgChanger.src = "img/Hexagonal.png";
     correctAnswer = calculateHexagonalPrismSurfaceArea(sideLength, height);
-    question = "What is the surface area of this Hexagonal Prism?";
 
     //-------------------------------------------------------------------------------------------------Pentagonal Prism
   } else if (randomShape == "Pentagonal Prism") {
@@ -141,7 +130,6 @@ function generateQuestion() {
       height,
       apothem
     );
-    question = "What is the surface area of this Pentagonal Prism?";
   } else {
     // ----------------------------------------------------------------------------------------------Cone
 
@@ -159,19 +147,14 @@ function generateQuestion() {
 
     imgChanger.src = "img/cone.png";
     correctAnswer = calculateConeSurfaceArea(radius, height);
-    question = `Calculate the surface area of a cone`;
   }
 
   //-----------------------------------------------------------------------------------------------------------Getting Correct Answer
-
-  document.getElementById("question").textContent = question;
-
   // Store the correct answer in a data attribute of the form for comparison
   document
     .getElementById("surface-area-form")
     .setAttribute("data-correct-answer", correctAnswer);
 }
-
 // clears input feild and answer
 function nextQuestion() {
   window.scrollTo(0, 0);
@@ -180,6 +163,7 @@ function nextQuestion() {
   document.getElementById("user-answer").value = "";
   generateQuestion();
 }
+
 
 // Check the user's answer and give response
 function checkAnswer() {
@@ -207,5 +191,13 @@ function checkAnswer() {
     }
   } else {
     alert("Please enter a valid number as your answer.");
+  }
+}
+function handleKeyPress(event) {
+  // Check if the key pressed is Enter (key code 13)
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    // Call your function here
+    checkAnswer();
   }
 }
